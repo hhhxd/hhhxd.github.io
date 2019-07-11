@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>sass | 随缘更新</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="css" />
+  
+  
+  
+  
+  <meta name="description" content="$使用之前先使用$声明变量。例如： $my-color: #ccc; - 与 _sass内，- 与 _  相通。例如： $my-color与$my_color 嵌套可进行与html结构类似的嵌套。    例如： 123456789101112//css:#content article h1 &amp;#123; color: #333 &amp;#125;#content article p &amp;#123; ma">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sass">
+<meta property="og:url" content="http://hhhkccco.club/2019/04/22/Sass/index.html">
+<meta property="og:site_name" content="随缘更新">
+<meta property="og:description" content="$使用之前先使用$声明变量。例如： $my-color: #ccc; - 与 _sass内，- 与 _  相通。例如： $my-color与$my_color 嵌套可进行与html结构类似的嵌套。    例如： 123456789101112//css:#content article h1 &amp;#123; color: #333 &amp;#125;#content article p &amp;#123; ma">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-11T07:37:34.191Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sass">
+<meta name="twitter:description" content="$使用之前先使用$声明变量。例如： $my-color: #ccc; - 与 _sass内，- 与 _  相通。例如： $my-color与$my_color 嵌套可进行与html结构类似的嵌套。    例如： 123456789101112//css:#content article h1 &amp;#123; color: #333 &amp;#125;#content article p &amp;#123; ma">
+  
+    <link rel="alternate" href="/atom.xml" title="随缘更新" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Sass" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Sass
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/04/22/Sass/" class="article-date">
+	  <time datetime="2019-04-22T06:56:01.000Z" itemprop="datePublished">2019-04-22</time>
+	</a>
+
+      
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id=""><a href="#" class="headerlink" title="$"></a>$</h3><p>使用之前先使用<code>$</code>声明变量。例如： <code>$my-color: #ccc;</code></p>
+<h3 id="与"><a href="#与" class="headerlink" title="- 与 _"></a>- 与 _</h3><p>sass内，<code>-</code> 与 <code>_</code>  相通。例如： <code>$my-color</code>与<code>$my_color</code></p>
+<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><p>可进行与html结构类似的嵌套。<br>    例如：</p>
+<pre><code><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//css:</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">article</span> <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> &#125;</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">article</span> <span class="selector-tag">p</span> &#123; <span class="attribute">margin-bottom</span>: <span class="number">1.4em</span> &#125;</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-tag">aside</span> &#123; <span class="attribute">background-color</span>: <span class="number">#EEE</span> &#125;</span><br><span class="line">//使用sass:</span><br><span class="line"><span class="selector-id">#content</span> &#123;</span><br><span class="line"> article &#123;</span><br><span class="line">    <span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>: <span class="number">#333</span> &#125;</span><br><span class="line">    <span class="selector-tag">p</span> &#123; <span class="attribute">margin-bottom</span>: <span class="number">1.4em</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">aside</span> &#123; <span class="attribute">background-color</span>: <span class="number">#EEE</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="父选择器的标识符-amp"><a href="#父选择器的标识符-amp" class="headerlink" title="父选择器的标识符&amp;"></a>父选择器的标识符&amp;</h3><p><code>&amp;</code>在使用时相当于被父选择器直接替换<br>    例如：<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">article</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">    &amp;:hover &#123; color: red &#125;</span><br><span class="line">&#125;</span><br><span class="line">//解析css为：</span><br><span class="line"><span class="selector-tag">article</span> <span class="selector-tag">a</span> &#123; <span class="attribute">color</span>: blue &#125;</span><br><span class="line"><span class="selector-tag">article</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: red &#125;</span><br></pre></td></tr></table></figure></p>
+<p>例子中，如果直接 <code>:hover { color: red }</code>,那么整个article元素内链接的所有子元素在被hover时都会变成红色</p>
+<h3 id="群组选择器的嵌套"><a href="#群组选择器的嵌套" class="headerlink" title="群组选择器的嵌套"></a>群组选择器的嵌套</h3><p>减少代码量，在嵌套层级达到两层、三层时尤其明显。<br>    例如css：<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span> <span class="selector-class">.container</span> <span class="selector-tag">h1</span>, <span class="selector-id">#box</span> <span class="selector-class">.container</span> <span class="selector-tag">h2</span>, <span class="selector-id">#box</span> <span class="selector-class">.container</span> <span class="selector-tag">h3</span> &#123;</span><br><span class="line">     <span class="attribute">margin-bottom</span>: .<span class="number">8em</span></span><br><span class="line"> &#125;</span><br><span class="line">//需要每次重复#box .container，然后再选择h1/h2/h3,使用sass：</span><br><span class="line"><span class="selector-id">#box</span> <span class="selector-class">.container</span> &#123;</span><br><span class="line">      h1, h2, h3 &#123;margin-bottom: .8em&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="属性的嵌套"><a href="#属性的嵌套" class="headerlink" title="属性的嵌套"></a>属性的嵌套</h3><p>把属性名从中划线-的地方断开，在根属性后边添加一个冒号<code>:</code>，紧跟一个<code>{ }</code>块，把子属性部分写在这个<code>{ }</code>块中<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//css：</span><br><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">border-style</span>: solid;</span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#ccc</span>;</span><br><span class="line">&#125;</span><br><span class="line">//sass：</span><br><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: &#123;</span><br><span class="line">        style: solid;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">        <span class="attribute">color</span>: <span class="number">#ccc</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于本就可以简写的子属性，可以以下面的方式简写，然后指明例外规则<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//css:</span><br><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">border-right</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line">//sass:</span><br><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span> &#123;</span><br><span class="line">        left: <span class="number">0px</span>;</span><br><span class="line">        <span class="attribute">right</span>: <span class="number">0px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="默认变量值"><a href="#默认变量值" class="headerlink" title="默认变量值"></a>默认变量值</h3><p>一般情况下，你反复声明一个变量，只有最后一处声明有效且它会覆盖前边的值。<br>使用sass的<code>!default</code>标签可以实现这个目的。它很像css属性中<code>!important</code>标签的对立面，不同的是<code>!default</code>用于变量，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。<br>例我有局部文件内容如下：<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$fancybox-width: 400px !default;</span><br><span class="line"><span class="selector-class">.fancybox</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: $fancybox-width;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果在导入你的sass局部文件之前声明了一个<code>$fancybox-width</code>变量，那么你的局部文件中对<code>$fancybox-width</code>赋值<code>400px</code>的操作就无效。如果用户没有做这样的声明，则<code>$fancybox-width</code>将默认为<code>400px</code></p>
+<h3 id="嵌套导入"><a href="#嵌套导入" class="headerlink" title="嵌套导入"></a>嵌套导入</h3><p>例我有一个名为_blue-theme.scss的局部文件，内容如下：<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">aside</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: blue;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后把它导入到一个CSS规则内，如下所示：<br>    <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.blue-theme &#123;@import "blue-theme"&#125;</span><br></pre></td></tr></table></figure></p>
+<p>生成的结果等同于：<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blue-theme</span> &#123;</span><br><span class="line">    aside &#123;</span><br><span class="line">        <span class="selector-tag">background</span>: <span class="selector-tag">blue</span>;</span><br><span class="line">        <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="静默注释"><a href="#静默注释" class="headerlink" title="静默注释"></a>静默注释</h3><p>css中注释的作用包括帮助你组织样式、以后你看自己的代码时明白为什么这样写，以及简单的样式说明。但是，你并不希望每个浏览网站源码的人都能看到所有注释。<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    color: #333;   // 这种注释内容不会出现在生成的css文件中</span><br><span class="line">    <span class="selector-tag">padding</span>: 0;    <span class="comment">/* 这种注释内容会出现在生成的css文件中 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="混入mixin"><a href="#混入mixin" class="headerlink" title="混入mixin"></a>混入<code>mixin</code></h3><p><code>@mixin</code>定义混合器，<code>@include</code>调用此混合器</p>
+<p>例如：abc.scss中的这段sass代码，定义了一个非常简单的混合器，目的是添加跨浏览器的圆角边框。<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> rounded-corners &#123;</span><br><span class="line">    <span class="selector-tag">-moz-border-radius</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">-webkit-border-radius</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">border-radius</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用如下：<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">'abc.scss'</span>;</span><br><span class="line"><span class="selector-tag">notice</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#00aa00</span>;</span><br><span class="line">    @include rounded-corners;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最终生成的css为：<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.notice</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#00aa00</span>;</span><br><span class="line">    <span class="attribute">-moz-border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">-webkit-border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="何时使用混合器"><a href="#何时使用混合器" class="headerlink" title="何时使用混合器"></a>何时使用混合器</h3><p>利用混合器，可以很容易地在样式表的不同地方共享样式。如果你发现自己在不停地重复一段样式，那就应该把这段样式构造成优良的混合器，尤其是这段样式本身就是一个逻辑单元，比如说是一组放在一起有意义的属性。<br>判断一组属性是否应该组合成一个混合器，一条经验法则就是你能否为这个混合器想出一个好的名字。如果你能找到一个很好的短名字来描述这些属性修饰的样式，比如<code>rounded-corners</code> <code>fancy-font</code>或者<code>no-bullets</code>，那么往往能够构造一个合适的混合器。如果你找不到，这时候构造一个混合器可能并不合适。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: '',
+  alipayImage: ''
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>本文作者:  </strong>Dra</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>本文链接:  </strong>
+          <a href="/2019/04/22/Sass/" target="_blank" title="Sass">http://hhhkccco.club/2019/04/22/Sass/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>版权声明:   </strong>
+            本博客所有文章除特别声明外，均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            许可协议。转载请注明出处
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/13/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/26/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与"><span class="nav-number">2.</span> <span class="nav-text">- 与 _</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套"><span class="nav-number">3.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父选择器的标识符-amp"><span class="nav-number">4.</span> <span class="nav-text">父选择器的标识符&amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#群组选择器的嵌套"><span class="nav-number">5.</span> <span class="nav-text">群组选择器的嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的嵌套"><span class="nav-number">6.</span> <span class="nav-text">属性的嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认变量值"><span class="nav-number">7.</span> <span class="nav-text">默认变量值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套导入"><span class="nav-number">8.</span> <span class="nav-text">嵌套导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静默注释"><span class="nav-number">9.</span> <span class="nav-text">静默注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混入mixin"><span class="nav-number">10.</span> <span class="nav-text">混入mixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时使用混合器"><span class="nav-number">11.</span> <span class="nav-text">何时使用混合器</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2019 随缘更新 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            随缘更新
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 Dra All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
